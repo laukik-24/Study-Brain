@@ -1,8 +1,9 @@
 # 📊 StudyBrain Architecture Diagram
 
-This diagram visualizes the data flow for both **Document Ingestion** and **RAG Query** pipelines.
+This diagram visualizes the data flow for both **Document Ingestion** and **RAG Query** pipelines, optimized for dark mode.
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#3b82f6', 'edgeLabelBackground':'#1a1a1a', 'tertiaryColor': '#1a1a1a'}}}%%
 graph TD
     subgraph User_Interface ["💻 Frontend (Next.js)"]
         Landing[Landing Page] -->|Session Check| Dashboard
@@ -41,12 +42,24 @@ graph TD
     O --> |Render| C
     I --> |Success Msg| A
 
-    style User_Interface fill:#f0f7ff,stroke:#0066cc,stroke-width:2px
-    style API_Gateway fill:#fff5f5,stroke:#cc0000,stroke-width:2px
-    style Ingestion_Flow fill:#f0fff4,stroke:#008000,stroke-dasharray: 5 5
-    style Query_Flow fill:#fffaf0,stroke:#d4a017,stroke-dasharray: 5 5
+    %% Dark Mode Styles
+    style User_Interface fill:#1e293b,stroke:#3b82f6,stroke-width:2px,color:#f8fafc
+    style API_Gateway fill:#1e1b4b,stroke:#6366f1,stroke-width:2px,color:#f8fafc
+    style Ingestion_Flow fill:#064e3b,stroke:#10b981,stroke-dasharray: 5 5,color:#f8fafc
+    style Query_Flow fill:#451a03,stroke:#f59e0b,stroke-dasharray: 5 5,color:#f8fafc
+    
+    %% Node Specific Styles
+    style Dashboard fill:#3b82f6,color:#fff,stroke-width:0px
+    style B2 fill:#4f46e5,color:#fff,stroke-width:0px
+    style D2 fill:#4f46e5,color:#fff,stroke-width:0px
 ```
 
+---
+
+## 🎨 How to view this diagram:
+1.  **GitHub**: Renders automatically and looks best in GitHub's **Dark Mode**.
+2.  **VS Code**: Install the "Markdown Preview Mermaid Support" extension.
+3.  **Online**: Copy the code block above and paste it into the [Mermaid Live Editor](https://mermaid.live/).
 
 ---
 
