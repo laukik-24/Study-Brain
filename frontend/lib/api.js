@@ -1,6 +1,10 @@
 import { supabase } from './supabaseClient';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+let API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+// Remove trailing slash if present to avoid double slashes in requests
+if (API_URL.endsWith('/')) {
+  API_URL = API_URL.slice(0, -1);
+}
 
 const getAuthHeaders = async () => {
   const { data: { session }, error } = await supabase.auth.getSession();
