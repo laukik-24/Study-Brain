@@ -24,7 +24,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -61,3 +60,6 @@ lerna-debug.log*
 .vscode/
 *.swp
 *.swo
+
+Hugging Face
+Hugging Face.pub
