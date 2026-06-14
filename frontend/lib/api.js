@@ -21,11 +21,14 @@ const getAuthHeaders = async () => {
 
 export const checkHealth = async () => {
   try {
+    console.log("DEBUG: Calling health check at:", `${API_URL}/health`);
     const res = await fetch(`${API_URL}/health`, {
       method: 'GET',
     });
+    console.log("DEBUG: Health check response status:", res.status);
     return res.ok;
   } catch (err) {
+    console.error("DEBUG: Health check failed:", err);
     return false;
   }
 };
